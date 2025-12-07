@@ -1,0 +1,25 @@
+<div class="form-container">
+    <h2>Submitted teacher Details</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>username</th>
+                <th>password</th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            {% for teacher in teachers %}
+            <tr>
+                <td>{{ teacher.username }}</td>
+                <td>{{ teacher.password }}</td>
+                
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="4" style="text-align: center; color: #999;">No teacher added yet</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
