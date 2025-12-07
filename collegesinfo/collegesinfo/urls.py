@@ -16,9 +16,15 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from teachersinfo.views import home
+from teachersinfo.views import home, login_page
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('home/',home)
+
+    # Add name so reverse() works
+    path('home/', home, name='home'),
+
+    # Login page
+    path('login/', login_page, name='login'),
 ]
+
